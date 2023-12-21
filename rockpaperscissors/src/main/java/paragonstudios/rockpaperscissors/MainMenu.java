@@ -72,7 +72,7 @@ public class MainMenu extends javax.swing.JFrame {
     
     
     public class clientConn implements Runnable{
-        private String ip = "42.2.170.217";
+        private String ip = "REPLACE WITH YOUR OWN SERVER IP";
         private int port = 26262;
         private Socket socket;
         private DataOutputStream dos;

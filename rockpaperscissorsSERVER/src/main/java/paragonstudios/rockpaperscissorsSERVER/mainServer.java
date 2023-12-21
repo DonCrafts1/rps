@@ -25,7 +25,7 @@ import java.util.concurrent.Executors;
  */
 public class mainServer {
     public static ServerSocket ss;
-    public static String ip = "localhost";
+    public static String ip = "localhost"; // CHANGE TO YOUR OWN IP
     public static DatabaseConnection db;
     public static Connection conn;
     public ExecutorService es = Executors.newFixedThreadPool(30);
@@ -37,8 +37,7 @@ public class mainServer {
     
     public mainServer(){
         try{
-            ss = new ServerSocket(26262);
-            //, 8, InetAddress.getByName(ip)
+            ss = new ServerSocket(26262, 8, InetAddress.getByName(ip)); // CHANGE ip TO YOUR OWN SERVER IP
             db = new DatabaseConnection();
             conn = db.getConnection();
             
@@ -116,7 +115,7 @@ public class mainServer {
                         byte typeOfMessage = dis.readByte();
                         System.out.println(typeOfMessage);
                         switch (typeOfMessage){
-                            case -2: //sending username (for people who arealready playing)
+                            case -2: //sending username (for people who are already playing)
                                 username = dis.readUTF();
                                 System.out.println("Got username: "+username);
                                 dos.writeByte(-2);

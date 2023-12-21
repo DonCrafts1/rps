@@ -17,10 +17,10 @@ public class DatabaseConnection {
     String databaseName = "rps";
     String databaseUser = "root";
     String databasePassword = "password";
-    String url = "jdbc:mysql://localhost:3306/"+databaseName+"?autoReconnect=true";
-//    String databaseUser = "paragonadmin";
-//    String databasePassword = "NotSoParagon";
-//    String url = "jdbc:mysql://rockpaperscissors.ce3b4gnestmr.ap-east-1.rds.amazonaws.com:3306/"+databaseName;
+    String url = "jdbc:mysql://localhost:3306/"+databaseName+"?autoReconnect=true"; 
+    // I have used MySQL for database storing account info. Very simple database, only one schema "UserAccounts"
+    // that contains following fields - username, password, totalWins
+
     
     public Connection getConnection(){
 
